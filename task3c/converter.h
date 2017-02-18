@@ -1,15 +1,17 @@
 #ifndef CONVERTER_H
 #define CONVERTER_H
 #include <QCoreApplication>
+#include <mixer.h>
 
 class Converter
 {
 public:
     Converter();
-    QString EncodeLine(QString inputStr, int blockSize);
+    QString EncodeLine(QString inputStr, QString mask);
     QString DecodeLine(QString inputStr, int blockSize);
 private:
     void Swap(QChar* a, QChar* b);
+    QString CompileStr(QList<QString> inputSeries);
 };
 
 #endif // CONVERTER_H

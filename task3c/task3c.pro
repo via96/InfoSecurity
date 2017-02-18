@@ -10,7 +10,9 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    converter.cpp
+    converter.cpp \
+    mixer.cpp
 
 HEADERS += \
-    converter.h
+    converter.h \
+    mixer.h
