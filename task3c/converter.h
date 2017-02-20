@@ -8,7 +8,7 @@ class Converter
 public:
     Converter();
     QString EncodeLine(QString inputStr, QString mask);
-    QString DecodeLine(QString inputStr, int blockSize);
+    QString DecodeLine(QString inputStr, QString mask);
 private:
     void Swap(QChar* a, QChar* b);
     QString CompileStr(QList<QString> inputSeries);

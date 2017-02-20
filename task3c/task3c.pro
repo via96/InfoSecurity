@@ -11,8 +11,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     converter.cpp \
-    mixer.cpp
+    mixer.cpp \
+    filemanager.cpp
 
 HEADERS += \
     converter.h \
-    mixer.h
+    mixer.h \
+    filemanager.h
