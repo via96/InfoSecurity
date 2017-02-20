@@ -36,6 +36,16 @@ QString Converter::DecodeLine(QString inputStr, QString mask)
     return CompileStr(blockSeries);
 }
 
+QString Converter::EncodeKardan(QString inputStr)
+{
+
+}
+
+QString Converter::DecodeKardan(QString inputStr)
+{
+
+}
+
 QString Converter::CompileStr(QList<QString> inputSeries)
 {
     QString result = "";

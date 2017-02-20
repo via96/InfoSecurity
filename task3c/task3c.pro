@@ -12,9 +12,11 @@ TEMPLATE = app
 SOURCES += main.cpp \
     converter.cpp \
     mixer.cpp \
-    filemanager.cpp
+    filemanager.cpp \
+    matrix.cpp
 
 HEADERS += \
     converter.h \
     mixer.h \
-    filemanager.h
+    filemanager.h \
+    matrix.h
