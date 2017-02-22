@@ -6,7 +6,8 @@ class Mixer
 {
 public:
     Mixer();
-    static QString MixBlock(QString block, QString mask);
+    static QString CodeBlock(QString block, QString mask);
+    static QString DecodeBlock(QString block, QString mask);
 private:
 
 };
