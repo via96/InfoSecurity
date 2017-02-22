@@ -8,9 +8,9 @@ FileManager::FileManager()
 void FileManager::Encode(QString inputStr, QString path)
 {
     QString source;
-    QFile file();
+    QFile file(path);
     QTextStream stream(&file);
-    file.open(path, QIODevice::ReadOnly | QIODevice::Text);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
     while (!stream.atEnd())
     {
         source = stream.readAll();
@@ -18,23 +18,25 @@ void FileManager::Encode(QString inputStr, QString path)
     file.close();
     QBitArray bitSeries = Converter::StrToBit(inputStr);
     int lastWhitespace = -1;
-    for (bool curBit : bitSeries)
+    for (int i = 0; i < bitSeries.size(); ++i)
     {
         lastWhitespace = source.indexOf(' ', lastWhitespace);
-        if (curBit)
+        if (bitSeries[i])
             source.insert(lastWhitespace + 1, ' ');
     }
-    file.open(path + "_encode", QIODevice::WriteOnly | QIODevice::Text);
-    stream << source;
-    file.close();
+    QFile sFile(path + "_encode");
+    QTextStream sStream(&sFile);
+    sFile.open(QIODevice::WriteOnly | QIODevice::Text);
+    sStream << source;
+    sFile.close();
 }
 
 QString FileManager::Decode(QString path)
 {
     QString source;
-    QFile file();
+    QFile file(path);
     QTextStream stream(&file);
-    file.open(path, QIODevice::ReadOnly | QIODevice::Text);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
     while (!stream.atEnd())
     {
         source = stream.readAll();

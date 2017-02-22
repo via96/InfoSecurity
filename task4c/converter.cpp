@@ -26,12 +26,12 @@ QString Converter::BitToStr(QBitArray bitSeries)
     QByteArray byteSeries;
     char c = 0;
     int blokSize = 0;
-    for (bool curBit : bitSeries)
+    for (int i = 0; i < bitSeries.size(); ++i)
     {
         char temp = 0;
         if (blokSize < 8)
         {
-            temp |= curBit;
+            temp |= bitSeries[i];
             temp << 7 - blokSize;
             c |= temp;
             blokSize++;

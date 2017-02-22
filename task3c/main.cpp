@@ -46,7 +46,18 @@ int main()
                 else
                     cout << "Encode error." << endl;
             }
-
+            if (dialog == 'm')
+            {
+                cout << "Input text: ";
+                char temp[100];
+                cin >> temp;
+                QString inputStr = QString::fromStdString(temp);
+                cout << "Input mask: ";
+                cin >> temp;
+                QString mask = QString::fromStdString(temp);
+                QString encodeStr = converter.MyEncode(inputStr, mask);
+                file.Write(encodeStr, "text");
+            }
         }
 
         if (dialog == 'd') //decode
@@ -65,6 +76,15 @@ int main()
             if (dialog == 'k')
             {
                 QString decodeStr = matrix.DecodeWord(file.Read("text"));
+                cout << decodeStr.toStdString() << endl;
+            }
+            if (dialog == 'm')
+            {
+                char temp[100];
+                cout << "Input mask: ";
+                cin >> temp;
+                QString mask = QString::fromStdString(temp);
+                QString decodeStr = converter.MyDecode(file.Read("text"), mask);
                 cout << decodeStr.toStdString() << endl;
             }
         }

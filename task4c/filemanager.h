@@ -2,6 +2,7 @@
 #define FILEMANAGER_H
 #include <QCoreApplication>
 #include <QFile>
+#include <QBitArray>
 #include <QTextStream>
 #include <converter.h>
 
