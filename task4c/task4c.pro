@@ -9,4 +9,10 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    converter.cpp \
+    filemanager.cpp
+
+HEADERS += \
+    converter.h \
+    filemanager.h
