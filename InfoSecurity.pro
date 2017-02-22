@@ -5,4 +5,5 @@ SUBDIRS += \
     task2c \
     task3c \
     task4c \
-    task5c
+    task5c \
+    task4min
