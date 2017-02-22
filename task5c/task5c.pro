@@ -3,20 +3,16 @@ QT -= gui
 
 CONFIG += c++11
 
-TARGET = task3c
+TARGET = task5c
 CONFIG += console
 CONFIG -= app_bundle
 
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    converter.cpp \
-    mixer.cpp \
     filemanager.cpp \
-    matrix.cpp
+    database.cpp
 
 HEADERS += \
-    converter.h \
-    mixer.h \
     filemanager.h \
-    matrix.h
+    database.h
