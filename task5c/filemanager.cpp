@@ -63,9 +63,11 @@ QList<QString> FileManager::ReadAll(QString path)
 Field FileManager::StrToField(QString str)
 {
     //Field result;
+    QString Name = str.left(str.indexOf(" "));
+    QString Hash = str.right(str.length() - str.indexOf(" ") - 1);
     //result.Name = str.left(str.indexOf(" "));
     //result.Hash = str.right(str.length() - str.indexOf(" ") + 1);
-    return Field(str.left(str.indexOf(" ")), str.right(str.length() - str.indexOf(" ") + 1));
+    return Field(Name, Hash);
 }
 
 QString FileManager::FieldToStr(Field field)
@@ -78,6 +80,7 @@ QString FileManager::GetFileHash(QString path)
     QFile file(path);
     file.open(QIODevice::ReadOnly);
     QByteArray res = file.readAll();
+    file.close();
     QCryptographicHash hash(QCryptographicHash::Md5);
-    return QString::fromStdString(hash.hash(res, QCryptographicHash::Md5).toStdString());
+    return QString::fromStdString(hash.hash(res, QCryptographicHash::Md5).toHex().toStdString());
 }
