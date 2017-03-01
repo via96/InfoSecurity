@@ -52,7 +52,9 @@ QList<QString> FileManager::ReadAll(QString path)
     QTextStream in(&file);
     while (!in.atEnd())
     {
-        result.append(in.readLine());
+        QString temp = in.readLine();
+        temp.remove(temp.indexOf('/n'), 1);
+        result.append(temp);
     }
     file.close();
     return result;
