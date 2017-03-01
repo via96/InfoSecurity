@@ -1,6 +1,11 @@
 #include <QCoreApplication>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    qApp->exit();
+    cout << "Before" << endl;
+    cout << "After";
+    return 0;
 }
