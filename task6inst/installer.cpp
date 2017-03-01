@@ -17,7 +17,8 @@ void Installer::Install(QString path)
         if (fInfo.fileName() != "." && fInfo.fileName() != "..")
         {
             if (QFile::copy(fInfo.filePath(), path + fInfo.fileName()))
-                cout << fInfo.filePath().toStdString() << " | " << fInfo.fileName().toStdString() << endl;
+                cout << fInfo.filePath().toStdString() << " | "
+                     << fInfo.fileName().toStdString() << endl;
         }
     }
 }
