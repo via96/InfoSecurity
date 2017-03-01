@@ -6,4 +6,6 @@ SUBDIRS += \
     task3c \
     task4c \
     task5c \
-    task4min
+    task4min \
+    task6inst \
+    task6run
